@@ -10,3 +10,9 @@
 #section 9: Jobs API | 170. Controllers
 
 #section 9: Jobs API | 171. Routes
+
+#section 9: Jobs API | 172. Database Connection
+    - create file : starter/.env
+    - mongodb atlas :
+        click connect -> connect your aplication (baris ke 2) -> copy aplication code:
+            mongodb+srv://ujang:<password>@nodeexpressproject.kfzgl.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
