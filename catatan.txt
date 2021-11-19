@@ -1,0 +1,8 @@
+#section 9: Jobs API 168. Intro
+    https://www.johnsmilga.com/projects -> jobs App
+        repo-source code: https://github.com/john-smilga/react-jobs-app/tree/main/src
+
+#section 9: Jobs API 169. Setup
+    langkah pertama , npm install && npm start
+    pada browser : http://localhost:3000
+    jika muncul kalimat 'jobs api' berarti setup yang kita lakukan berhasil.
