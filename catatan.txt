@@ -6,3 +6,5 @@
     langkah pertama , npm install && npm start
     pada browser : http://localhost:3000
     jika muncul kalimat 'jobs api' berarti setup yang kita lakukan berhasil.
+
+#section 9: Jobs API | 170. Controllers
