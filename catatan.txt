@@ -16,3 +16,7 @@
     - mongodb atlas :
         click connect -> connect your aplication (baris ke 2) -> copy aplication code:
             mongodb+srv://ujang:<password>@nodeexpressproject.kfzgl.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+
+#section 9: Jobs API | 173. User Schema
+    Documentation: https://mongoosejs.com/docs/validation.html
+                        https://mongoosejs.com/docs/5.x/docs/schematypes.html#string-validators
