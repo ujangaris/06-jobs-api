@@ -161,3 +161,26 @@
             }
         
         token akan tergenerate pula.
+
+#section 9: Jobs API | 181. JWT_SECRET and JWT_LIFETIME
+    WEB untuk Generate token :
+        Documentation: https://www.allkeysgenerator.com/
+        gunkan encryption Key -> 256-bit:
+            'G+KbPeShVmYq3t6v9y$B&E)H@McQfTjW'
+    Pengujian pada postman:
+        lakukan register kembali dengan nama yang belum tertera pada database:
+            Register User
+        POST {{URL}}/auth/register
+        body => raw => json :
+            {
+                "name":"susi", "email":"susi@gmail.com","password":"secret"
+            }
+        response akan menampilkan : 
+            {
+                "user": {
+                    "name": "susi"
+                },
+                "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTk4ZGEzODcwZjM4YzJmOTEzMWZlY2UiLCJuYW1lIjoiam9obiIsImlhdCI6MTYzNzQwNzI4OSwiZXhwIjoxNjM5OTk5Mjg5fQ.4AoA96enMISrz6vYX3qcR55zYVBenS-yU79Kw0CkS5g"
+            }
+        
+        token akan tergenerate kembali.
