@@ -20,3 +20,13 @@
 #section 9: Jobs API | 173. User Schema
     Documentation: https://mongoosejs.com/docs/validation.html
                         https://mongoosejs.com/docs/5.x/docs/schematypes.html#string-validators
+
+#section 9: Jobs API | 174. Create User - Basic Setup
+    Pengujian pada postman:
+        Register User
+        POST {{URL}}/auth/register
+        body => raw => json :
+            {
+                "name":"john", "email":"john@gmail.com","password":"secret"
+            }
+        response akan menampilkan : 'register user'
