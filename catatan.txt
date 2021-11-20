@@ -49,3 +49,15 @@
                 }
             }
 
+#section 9: Jobs API | 175. Error Checking - Controller Example
+    Pengujian  pada postman:
+     Register User
+        POST {{URL}}/auth/register
+        body => raw => json :
+            {
+                "name":"john", "email":"john@gmail.com","password":"secret"
+            }
+        ketika password/email disalahkan atau kosong response akan menampilkan : 
+            {
+                "msg": "Please provide name, email and password"
+            }
