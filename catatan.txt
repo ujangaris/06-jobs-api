@@ -107,3 +107,21 @@
             }
         
         terlihat jika password sudah ter-encrypsi kedalam bentuk token.
+
+#section 9: Jobs API | 179. Generate Token - Controller
+    coba lakukan pemguian pada postman:
+    Register User
+        POST {{URL}}/auth/register
+        body => raw => json :
+            {
+                "name":"john", "email":"john@gmail.com","password":"secret"
+            }
+        response akan menampilkan : 
+            {
+                "user": {
+                    "name": "john"
+                },
+                "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTk4ZGEzODcwZjM4YzJmOTEzMWZlY2UiLCJuYW1lIjoiam9obiIsImlhdCI6MTYzNzQwNzI4OSwiZXhwIjoxNjM5OTk5Mjg5fQ.4AoA96enMISrz6vYX3qcR55zYVBenS-yU79Kw0CkS5g"
+            }
+        
+        token akan tergenerate.
