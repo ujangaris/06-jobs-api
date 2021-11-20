@@ -61,3 +61,28 @@
             {
                 "msg": "Please provide name, email and password"
             }
+
+#section 9: Jobs API | 176. Hashing Password Info
+    Documentation: https://www.npmjs.com/package/bcryptjs
+        untuk menginstall via npm : npm install bcryptjs
+
+#section 9: Jobs API | 177. Hash User Password
+    Pengujian  pada postman:
+     Register User
+        POST {{URL}}/auth/register
+        body => raw => json :
+            {
+                "name":"john", "email":"john@gmail.com","password":"secret"
+            }
+        response akan menampilkan : 
+            {
+                "user": {
+                    "_id": "6198c81836b72c1cf210a461",
+                    "name": "john",
+                    "email": "john@gmail.com",
+                    "password": "$2a$10$/q.D/35l1KpQk.piLDtQw.tQKLAdUhkjnRk0lXGLRhIdK5YLE8QmS",
+                    "__v": 0
+                }
+            }
+        
+        terlihat jika password sudah ter-encrypsi kedalam bentuk token.
