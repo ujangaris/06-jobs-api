@@ -125,3 +125,22 @@
             }
         
         token akan tergenerate.
+
+#section 9: Jobs API | 180. Generate Token - Instance Method 
+    Documentation: https://mongoosejs.com/docs/5.x/docs/guide.html#methods
+    coba lakukan pemguian pada postman:
+    Register User
+        POST {{URL}}/auth/register
+        body => raw => json :
+            {
+                "name":"anna", "email":"anna@gmail.com","password":"secret"
+            }
+        response akan menampilkan : 
+            {
+                "user": {
+                    "name": "anna"
+                },
+                "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTk4ZGEzODcwZjM4YzJmOTEzMWZlY2UiLCJuYW1lIjoiam9obiIsImlhdCI6MTYzNzQwNzI4OSwiZXhwIjoxNjM5OTk5Mjg5fQ.4AoA96enMISrz6vYX3qcR55zYVBenS-yU79Kw0CkS5g"
+            }
+        
+        token akan tergenerate.
