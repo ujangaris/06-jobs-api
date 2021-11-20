@@ -30,3 +30,22 @@
                 "name":"john", "email":"john@gmail.com","password":"secret"
             }
         response akan menampilkan : 'register user'
+    
+    Pengujian kembali  pada postman:
+        Register User
+        POST {{URL}}/auth/register
+        body => raw => json :
+            {
+                "name":"john", "email":"john@gmail.com","password":"secret"
+            }
+        response akan menampilkan : 
+            {
+                "user": {
+                    "_id": "6198a719c424f427c45f2ff7",
+                    "name": "john",
+                    "email": "john@gmail.com",
+                    "password": "secret",
+                    "__v": 0
+                }
+            }
+
