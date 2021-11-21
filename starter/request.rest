@@ -1,0 +1,14 @@
+POST  http://localhost:3000/api/v1/auth/register
+Content-Type: application/json
+
+{
+    "name":"mamat", "email":"mamat@gmail.com","password":"secret"
+}
+
+###
+POST  http://localhost:3000/api/v1/auth/login
+Content-Type: application/json
+
+{
+   "email":"john@gmail.com","password":"secret"
+}
