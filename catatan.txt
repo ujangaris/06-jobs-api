@@ -201,3 +201,17 @@
                 },
                 "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTlhMTAzZjVkNTY2OTIwNTJhMzExYmIiLCJuYW1lIjoiam9obiIsImlhdCI6MTYzNzQ5MDUzNywiZXhwIjoxNjQwMDgyNTM3fQ.B0Q6KrEYuIo0vw4zN0cAMeVxCaJk8K_eiFf4QrgUR7Q"
             }
+
+#section 9: Jobs API | 183.Compare Password
+    pengujian dengan file request.rest klik kalimat Send Request:
+        ###
+        POST  http://localhost:3000/api/v1/auth/login
+        Content-Type: application/json
+
+            {
+                "email":"john@gmail.com","password":"secre"
+            }
+        coba mem-masukan password yang salah saat send request, maka response akan menampilkan:
+            {
+                "msg": "Invalid Credentials"
+            }
