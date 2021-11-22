@@ -351,3 +351,22 @@
         maka kita berahasil melakukan crate job tanpa memasukan access token terlebih dahulu.
     "LAKUKAN HAL YANG SAMA UNTUK GET ALL JOB"
         
+#section 9: Jobs API | 191. Get Single Job
+
+    pengujian pada postman:
+        Get Single Job:
+            GET {{URL}}/jobs/619b684cc8cdf43503085c7b
+            Authorization ->pilih  BearerToken -> accessToken
+         hasil response: 
+            {
+                "job": {
+                    "status": "pending",
+                    "_id": "619b684cc8cdf43503085c7b",
+                    "company": "garuda",
+                    "position": "back-end developper",
+                    "createdBy": "619b6826c8cdf43503085c79",
+                    "createdAt": "2021-11-22T09:52:12.737Z",
+                    "updatedAt": "2021-11-22T09:52:12.737Z",
+                    "__v": 0
+                }
+            }
