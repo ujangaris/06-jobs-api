@@ -247,3 +247,26 @@
 #section 9: Jobs API | 186. Alternative Code
 
 #section 9: Jobs API | 187. Job Model
+
+#section 9: Jobs API | 188. Create Job Route
+    pengujian pada postman:
+        Create Job:
+            POST {{URL}}/jobs
+            body -> raw -> json:
+                {
+                    "company":"google", "position":"intern"
+                }
+            hasil response:
+            {
+                "job": {
+                    "status": "pending",
+                    "_id": "619b5f10a0cc6e31a9e5524f",
+                    "company": "google",
+                    "position": "intern",
+                    "createdBy": "619b5503787e7f25f0164ec0",
+                    "createdAt": "2021-11-22T09:12:48.705Z",
+                    "updatedAt": "2021-11-22T09:12:48.705Z",
+                    "__v": 0
+                }
+            }
+            dan pada databse mongoDB atlas ; data berhasil tersimpan didatabase.
