@@ -215,5 +215,4 @@
             {
                 "msg": "Invalid Credentials"
             }
-
 #section 9: Jobs API | 184. Auth Middleware - Setup
