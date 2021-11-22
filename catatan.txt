@@ -300,3 +300,54 @@
                     "__v": 0
                 }]
             }
+
+#section 9: Jobs API | 190. Set Token Dynamically in Postman
+    pada postman:
+    ##Step 1:
+    Login User -> Tests :
+        const jsonData = pm.response.json()
+    lalu pada snippet pilih set global varible:
+        pm.globals.set("variable_key", "variable_value");
+    lalu rubah seperti dibawah ini:
+        pm.globals.set("accessToken", jsonData.token);
+    "LAKUKAN HAL YANG SAMA UNTUK REGISTER"
+
+    sekarang coba lakukan send data:
+
+        POST {{URL}}/auth/login
+        body => raw => json :
+            {
+                "email":"anna@gmail.com","password":"secret"
+            }
+        response akan menampilkan : 
+            {
+                "user": {
+                    "name": "anna"
+                },
+                "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTk4ZGEzODcwZjM4YzJmOTEzMWZlY2UiLCJuYW1lIjoiam9obiIsImlhdCI6MTYzNzQwNzI4OSwiZXhwIjoxNjM5OTk5Mjg5fQ.4AoA96enMISrz6vYX3qcR55zYVBenS-yU79Kw0CkS5g"
+            }
+        
+    ##Step 2:
+        Create Job:
+        POST {{URL}}/jobs
+            Authorization -> pilih Bearer -> Token : {{accessToken}}
+        body => raw => json :
+            {
+                "company":"garuda", "position":"back-end developper"
+            }
+        response:
+            {
+                "job": {
+                    "status": "pending",
+                    "_id": "619b684cc8cdf43503085c7b",
+                    "company": "garuda",
+                    "position": "back-end developper",
+                    "createdBy": "619b6826c8cdf43503085c79",
+                    "createdAt": "2021-11-22T09:52:12.737Z",
+                    "updatedAt": "2021-11-22T09:52:12.737Z",
+                    "__v": 0
+                }
+            }
+        maka kita berahasil melakukan crate job tanpa memasukan access token terlebih dahulu.
+    "LAKUKAN HAL YANG SAMA UNTUK GET ALL JOB"
+        
