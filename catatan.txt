@@ -245,3 +245,5 @@
             }
 
 #section 9: Jobs API | 186. Alternative Code
+
+#section 9: Jobs API | 187. Job Model
