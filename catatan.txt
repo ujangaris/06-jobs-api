@@ -393,3 +393,7 @@
                     }
                 }
             
+#section 9: Jobs API | 193. Remove Job
+        DELETE {{URL}}/jobs/<id job yang mau di hapus>
+            Headers -> Authorization : Bearer <token>
+        lakukan send request, maka hasil responsenya: 200 OK 
