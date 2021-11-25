@@ -397,3 +397,18 @@
         DELETE {{URL}}/jobs/<id job yang mau di hapus>
             Headers -> Authorization : Bearer <token>
         lakukan send request, maka hasil responsenya: 200 OK 
+
+#section 9: Jobs API | 194.Duplicate Error
+    pengujian pada postman:
+    Register User
+        POST {{URL}}/auth/register
+            body => raw => json :
+
+            {
+                "name":"peter", "email":"peter@gmail.com","password":"secret"
+            }
+            
+        jika memasukan email yang sama maka response akan menampilkan:
+            {
+                "msg": "Duplicate value entered for email field, please choose another value"
+            }
