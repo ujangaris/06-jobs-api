@@ -440,3 +440,11 @@
             {
                 "msg": "Please provide password,Please provide email"
             }
+
+#section 9: Jobs API | 197. Cast Error
+    pengujian dengan postman:
+        login terlebih dahulu dengan email terdaftar, lalu get all jobs, pilih salah satu id, 
+        kemudian paste get single job, hapus satu id dari belakang maka response akan menampilkan:
+            {
+                "msg": "No item found with id : 619b5f10a0cc6e31a9e5524"
+            }
