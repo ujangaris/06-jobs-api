@@ -458,3 +458,127 @@
 
 #section 9: Jobs API | 199. Security Setup
     Documentation: https://www.npmjs.com/package/express-rate-limit
+
+#section 9: Jobs API | 200. Additional Info
+
+#section 9: Jobs API | 201. Heroku Info
+    Documentation:https://devcenter.heroku.com/articles/heroku-cli
+        sudo snap install --classic heroku
+
+#section 9: Jobs API | 202. Deploy to Heroku
+    langkah pertama, copy folder directory yang ingin di deploying
+    selanjutnya hapus file .git dengan comment rm -rf .git
+
+    Documentation:  https://devcenter.heroku.com/categories/reference
+                    https://devcenter.heroku.com/categories/nodejs-support
+    
+    pada file app.js :
+        app.get('/', (req, res) => {
+        res.send('<h1>Jobs API</h1><a href="/api-docs">Documentation</a>');
+        });
+
+    Documentation  :  https://devcenter.heroku.com/articles/deploying-nodejs
+    pada file package.json :
+            "engines": {
+            "node":"14.x"
+            }
+    
+    selanjutnya masih pada package.json rubah nodemon menjadi node saja seperti dibawah ini :
+            "scripts": {
+                "start": "node app.js"
+            },
+
+    klik Procfile untuk menuju halaman web baru, dan buat file baru dengan nama Procfile,
+    pada file tersebut isi dengan : 
+        web: node app.js
+
+    selanjutnya:
+     git init
+     git add .
+     git commit -m"initial commit"
+     
+     
+     ketikan : heroku login
+ ›   Warning: heroku update available from 7.59.1 to 7.59.2.
+    heroku: Press any key to open up the browser to login or q to exit: 
+
+    setelah kalimat diatas muncul tekan tombol apa aja sapa keyboard
+
+    maka halamn login heroku pada brwoser akan terbuka, klik login , liat pada terminal:
+    Opening browser to https://cli-auth.heroku.com/auth/cli/browser/d548cf28-f627-4e1b-90ef-ed98bac11eae?requestor=SFMyNTY.g2gDbQAAAA8xMzkuMTkzLjEyNi4yMTduBgB4EKZmfQFiAAFRgA.mfMfxwn3S2MT3DIgg_qaxOQ9VK4Bghjk2HQzv7NYN1k
+    Logging in... done
+    Logged in as ujangaja@gmail.com
+
+    kembali pada terminal:
+    heroku create jobs-api
+
+    jika muncul response seperti ini maka ganti nama saja karna nama suda ada yang punya:
+         Warning: heroku update available from 7.59.1 to 7.59.2.
+            Creating ⬢ jobs-api... !
+            ▸    Name jobs-api is already taken
+    
+    bisa dengan nama ini:
+    heroku create jobs-api-tanggal-bulan-tahun
+        Creating ⬢ jobs-api-28-11-21... done
+        https://jobs-api-28-11-21.herokuapp.com/ | https://git.heroku.com/jobs-api-28-11-21.git
+    
+    git remote -v , akan tampil:
+        heroku  https://git.heroku.com/jobs-api-28-11-21.git (fetch)
+        heroku  https://git.heroku.com/jobs-api-28-11-21.git (push)
+
+    buka file .env sebagai patokan, kemudian copy : JWT_LIFETIME=30d
+    ketikan pada terminal:
+        heroku config:set JWT_LIFETIME=30d
+    hasil pada terminal:
+        Setting JWT_LIFETIME and restarting ⬢ jobs-api-28-11-21... done, v3
+        JWT_LIFETIME: 30d
+
+    ketikan git push heroku master
+
+    ###Heroku
+        buka browser : https://dashboard.heroku.com/apps
+
+        maka aplikasi sudah ada pada heroku
+
+        masuk ke aplikasi yang telah di deploy : jobs-api-28-11-21
+        lalu pilih seting, klik Config Vars dan isi semua yang ada pada .env ke dalamnya lalu save.
+
+        setelah itu pilih more -> Restart all dynos -> Restart all dynos
+                          more ->view logs
+
+    ###pada postman:
+    buka global variable trus edit:
+        dibawah URL 
+            VARIABLE            INITIAL VALUE
+            PROD_URL            https://jobs-api-28-11-21.herokuapp.com/api/v1
+    lalu save.
+            https://jobs-api-28-11-21.herokuapp.com ini diambil dari halaman aplikasi yang kita deploy pada heroku.
+    
+
+    Pengujian pada postman:
+        POST {{PROD_URL}}/auth/login
+            body -> raw-> json:
+                {
+                    "email":"john@gmail.com","password":"secret"
+                }
+        buka login user:
+            POST {{URL}}/auth/login
+            copy script dari Tets , lalu pastekan pada  Test :
+                 POST {{PROD_URL}}/auth/login
+                    const jsonData = pm.response.json()
+                    pm.globals.set("accessToken", jsonData.token);
+
+        selanjutnya coba lakukan send request jika berhasil akan seperti dibawah ini:
+            {
+                "user": {
+                    "name": "john"
+                },
+                "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTliNTUwMzc4N2U3ZjI1ZjAxNjRlYzAiLCJuYW1lIjoiam9obiIsImlhdCI6MTYzODEwNjMxMCwiZXhwIjoxNjQwNjk4MzEwfQ.4YFuPi4UIrGzbPAoxdRR83E1pGpknhee5Id-6YMPTWg"
+            }
+        
+        untuk berikutnya coba :
+            GET {{PROD_URL}}/jobs lalu send request , maka akan tampil data json semua jobs.
+
+
+
+
