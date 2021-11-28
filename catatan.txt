@@ -425,3 +425,18 @@
             {
                 "msg": "Please provide email and password"
             }
+
+#section 9: Jobs API | 196. Validation Error
+    pengujian pada postman:
+    Register User
+        POST {{URL}}/auth/register
+            body => raw => json :
+
+            {
+                "name":"peter"
+            }
+            
+        jika hanya memasukan email  maka response akan menampilkan:
+            {
+                "msg": "Please provide password,Please provide email"
+            }
