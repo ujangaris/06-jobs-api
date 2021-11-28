@@ -448,3 +448,13 @@
             {
                 "msg": "No item found with id : 619b5f10a0cc6e31a9e5524"
             }
+
+#section 9: Jobs API | 198. Security Info and Package
+    #### Security
+    - helmet
+    - cors
+    - xss-clean
+    - express-rate-limit
+
+#section 9: Jobs API | 199. Security Setup
+    Documentation: https://www.npmjs.com/package/express-rate-limit
