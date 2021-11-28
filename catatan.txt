@@ -412,3 +412,16 @@
             {
                 "msg": "Duplicate value entered for email field, please choose another value"
             }
+
+#section 9: Jobs API | 195. Custom Error
+    coba lakukan pengujian pada postman:
+    Login User tanpa password
+        POST {{URL}}/auth/login
+        body => raw => json :
+            {
+                "email":"anna@gmail.com"
+            }
+        response akan menampilkan : 
+            {
+                "msg": "Please provide email and password"
+            }
