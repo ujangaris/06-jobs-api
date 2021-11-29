@@ -579,6 +579,19 @@
         untuk berikutnya coba :
             GET {{PROD_URL}}/jobs lalu send request , maka akan tampil data json semua jobs.
 
+#section 9: Jobs API | 203. Swagger UI Info
+
+#section 9: Jobs API | 204. Clone Existing Heroku Project
+    buka directory project yang akan digunakan, kemudian ketikan perintah berikut:
+        heroku git:clone -a <nama project pada heroku>
+        Contoh = heroku git:clone - a jobs-api-28-11-21
+    
+    untuk mencoba file yang telah kita clone :
+        buat file .env , lalu kemudian copy paste isi dari config var pada link dibawah berikut ke  file .env : 
+            https://dashboard.heroku.com/apps/jobs-api-28-11-21/settings
+        kemudian jalankan perintah npm install && npm start
+         lalu buka browser dan buka: http://localhost:5000
+
 
 
 
