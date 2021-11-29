@@ -680,3 +680,15 @@
         
         lalu coba lakukan register,trus login dan copy paste token pada Authotize
         setelah itu lakukan pengujian yang diperlukan
+
+#section 9: Jobs API | 209. Add Swagger UI
+    pertama2 install package yang diperlukan:
+        npm i yamljs swagger-ui-express
+        buat file baru dengan nama : swagger.yaml
+        lalu copy script yang sudah kita test pada https://editor.swagger.io/
+
+        kemudian buka browser : http://localhost:5000
+        setelah berhasil , lakukan langkah berikut:
+            git add .
+            git commit -m"swagger docs added
+            git push heroku master
