@@ -600,7 +600,7 @@
 #section 9: Jobs API | 206. APIMATIC Info
     Documentation: https://www.apimatic.io/
 
-#section 9: Jobs API | 206. APIMATIC Setup
+#section 9: Jobs API | 207. APIMATIC Setup
     login ke APIMATIC lalu import docs.json yang sudah kita export sebelumnya.
     jika ada error abaikan saja kemudian pada api yang kita import klik Edit API
     kemudian rubah name nya menjadi Jobs API lalu Save Basic Settings
@@ -645,5 +645,38 @@
         lalu lakukan export API :
             -> export format : OpenAPI v3.0(YAML)
 
-
-
+#section 9: Jobs API | 208. Swagger UI Editor
+    pertma copy hasil export sebelumnya dan paster pada :
+        Documentation : https://editor.swagger.io/
+    lalu hapus source code : 
+        - name: Misc
+          description: ''
+          
+    kemudian pada browser : swegger ui parameters
+        Documentation: https://swagger.io/docs/specification/describing-parameters/
+    
+        cari Common Parameters for All Methods of a Path lalu copy scriptnya:
+            /user/{id}:
+        parameters:
+        - in: path
+            name: id
+            schema:
+            type: integer
+            required: true
+            description: The user ID
+        
+        lalu pada https://editor.swagger.io/
+            get all jobs: 
+            yang ini /jobs/619b5f10a0cc6e31a9e5524f:
+            diganti dengan sourse code copian diatas lalu modifikasi:
+                /jobs/{id}:
+                parameters:
+                - in: path
+                    name: id
+                    schema:
+                    type: string
+                    required: true
+                    description: The job ID
+        
+        lalu coba lakukan register,trus login dan copy paste token pada Authotize
+        setelah itu lakukan pengujian yang diperlukan
