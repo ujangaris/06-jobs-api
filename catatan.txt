@@ -592,6 +592,9 @@
         kemudian jalankan perintah npm install && npm start
          lalu buka browser dan buka: http://localhost:5000
 
-
+#section 9: Jobs API | 205. Export Postman Documentation
+    pertama2 rubah semua link pada postman, dari POST {{URL}}/auth/register => POsT {{PROD_URL}}/auth/register
+    lalu coba export project jobs-api-06 yang telah kita kerjakan -> Collection v2.1 (recommended)
+    dan namakan dengan docs.json lalu simpan pada Dekstop agar mudah ditemukan
 
 
