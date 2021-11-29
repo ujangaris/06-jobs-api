@@ -597,4 +597,53 @@
     lalu coba export project jobs-api-06 yang telah kita kerjakan -> Collection v2.1 (recommended)
     dan namakan dengan docs.json lalu simpan pada Dekstop agar mudah ditemukan
 
+#section 9: Jobs API | 206. APIMATIC Info
+    Documentation: https://www.apimatic.io/
+
+#section 9: Jobs API | 206. APIMATIC Setup
+    login ke APIMATIC lalu import docs.json yang sudah kita export sebelumnya.
+    jika ada error abaikan saja kemudian pada api yang kita import klik Edit API
+    kemudian rubah name nya menjadi Jobs API lalu Save Basic Settings
+
+    pilih Server Configuration:
+        pada URL isi dengan link url yang ada pada project app di heroku:
+            heroku dashboard -> pilih app yang mau di deploy -> open app 
+                https://jobs-api-28-11-21.herokuapp.com/ lalu rubah menjadi:
+                    https://jobs-api-28-11-21.herokuapp.com/api/v1
+        kemudian Save Config Setting
+    
+    pada Authentication : OAut2.0 - Bearer Token
+
+    pada Endpoints
+        Misc :
+        - Register User : Group 
+                            -> Auth 
+                          Advanced Setting  
+                            -> nyalakan Skip authentication?
+                            Save Endpoints
+        - Login User : Group 
+                            -> Auth 
+                          Advanced Setting  
+                            -> nyalakan Skip authentication?
+                            Save Endpoints
+        - Create Job : Group 
+                            -> Jobs 
+                            Save Endpoints
+        - Get All Jobs : Group 
+                            -> Jobs 
+                            Save Endpoints
+        - Get Single Job : Group 
+                            -> Jobs 
+                            Save Endpoints
+        - Get Update Job : Group 
+                            -> Jobs 
+                            Save Endpoints
+        - Get Delete Job : Group 
+                            -> Jobs 
+                            Save Endpoints
+        
+        lalu lakukan export API :
+            -> export format : OpenAPI v3.0(YAML)
+
+
 
